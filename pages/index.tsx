@@ -1,51 +1,47 @@
 // /pages/index.tsx
-import Head from "next/head";
-import { gql, useQuery, useMutation } from "@apollo/client";
-import { AwesomeLink } from "../components/AwesomeLink";
-import type { Link as Node } from "@prisma/client";
-import Link from "next/link";
-import { useUser } from "@auth0/nextjs-auth0/client";
+
+import { gql, useQuery, useMutation } from '@apollo/client';
 
 const AllLinksQuery = gql`
-  query pokemons($first: Int!){
-    pokemons(first: $first){
-      id
-      number
-      name
-      weight{
-        minimum
-        maximum
-      }
-      height{
-        minimum
-        maximum
-      }
-      classification
-      types
-      resistant
-      weaknesses
-      fleeRate
-      maxCP
-      maxHP
-      image
+    query pokemons($first: Int!) {
+        pokemons(first: $first) {
+            id
+            number
+            name
+            weight {
+                minimum
+                maximum
+            }
+            height {
+                minimum
+                maximum
+            }
+            classification
+            types
+            resistant
+            weaknesses
+            fleeRate
+            maxCP
+            maxHP
+            image
+        }
     }
-  }
 `;
 
 function Home() {
-  const { user } = useUser()
-  const { data, loading, error, fetchMore } = useQuery(AllLinksQuery, {
-    variables: { first: 3 },
-  });
+    const { data, loading, error, fetchMore } = useQuery(AllLinksQuery, {
+        variables: { first: 1000 },
+    });
 
-  console.log({data})
-
-  
-  return (
-    <div>
-     
-    </div>
-  );
+    return (
+        <div>
+            {loading ? (
+                <span>Loading</span>
+            ) : (
+                <span>{data.pokemons[0].name}</span>
+            )}
+        </div>
+    );
 }
 
 export default Home;
