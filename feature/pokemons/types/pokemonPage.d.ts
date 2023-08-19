@@ -19,3 +19,5 @@ type PokemonList = {
     maxHP: number;
     image: string;
 };
+
+export type { PokemonList };

@@ -1,14 +1,14 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore } from '@reduxjs/toolkit';
 
-import { useAppSelector } from "./hook";
+import { useAppSelector } from './hook';
 
 //feature redux stores
-// import loginFeature from "src/features/login/redux";
+import pokemonPageFeature from '../feature/pokemons/redux/pokemonPage/slice';
 
 const store = configureStore({
-  reducer: {
-    
-  },
+    reducer: {
+        pokemonPageFeature,
+    },
 });
 
 export default store;
