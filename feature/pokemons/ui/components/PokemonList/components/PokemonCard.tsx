@@ -9,7 +9,7 @@ import PokemonTypeColors from '../../../../constants/pokemonTypesColor';
 
 //utils
 import getTypeColor from '../../../../utils/getTypeColor';
-import { Pokemon } from '../../../../query/getAllPokemons';
+import { Pokemon } from '../../../../types/queryType';
 
 interface Props {
     pokemon: Pokemon;
