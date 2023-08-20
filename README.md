@@ -16,4 +16,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Demon on Vercel
 
-demo link [Pokemon Search](https://pokemon-search-mu.vercel.app/) from the creators of Next.js.
+demo link [Pokemon Search](https://pokemon-search-mu.vercel.app/).
