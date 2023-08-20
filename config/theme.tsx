@@ -36,6 +36,7 @@ const theme = createTheme({
         },
         mute: {
             main: '#161515BF',
+            light: '#A9A9A9',
         },
     },
 });

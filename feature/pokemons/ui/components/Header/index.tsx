@@ -4,7 +4,6 @@ import Button from '@mui/material/Button';
 import SearchIcon from '@mui/icons-material/Search';
 
 import React, { useState } from 'react';
-import SearchInput from '../../../../../components/molecules/SearchInput';
 
 interface Props {
     onSearch(value: string): void;

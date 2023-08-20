@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-import { gql, useQuery, useMutation } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 
 //mui
-import { Box, Container } from '@mui/material';
+import { Box } from '@mui/material';
 
 //components
 import Header from './components/Header';

@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
+
+//mui
 import { Box, Grid, Typography } from '@mui/material';
 
 //components
@@ -14,8 +17,6 @@ interface Props {
 
 const PokemonList = (props: Props) => {
     const { pokemonList, loadMore } = props;
-
-    console.log({ pokemonList });
 
     return (
         <Box
@@ -33,7 +34,9 @@ const PokemonList = (props: Props) => {
                     >
                         {pokemonList.map((item) => (
                             <Grid item xs={1} md={3} lg={2}>
-                                <PokemonCard pokemon={item} />
+                                <Link href={`/pokemon/${item.name}`}>
+                                    <PokemonCard pokemon={item} />
+                                </Link>
                             </Grid>
                         ))}
                     </Grid>

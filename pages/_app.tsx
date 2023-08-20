@@ -1,10 +1,11 @@
 import * as React from 'react';
 
+import '../styles/styles.css';
+
 import Layout from '../components/Layout';
 import { ApolloProvider } from '@apollo/client';
 import type { AppProps } from 'next/app';
 import apolloClient from '../lib/apollo';
-import ReduxProvider from '../redux/Provider';
 
 import Head from 'next/head';
 import { ThemeProvider } from '@mui/material/styles';
@@ -26,27 +27,25 @@ function MyApp({
     emotionCache = clientSideEmotionCache,
 }: MyAppProps) {
     return (
-        <ReduxProvider>
-            <ApolloProvider client={apolloClient}>
-                <CacheProvider value={emotionCache}>
-                    <Head>
-                        <meta
-                            name="viewport"
-                            content="initial-scale=1, width=device-width"
-                            title="Pokemon search"
-                        />
-                        <title>Pokemon Search</title>
-                    </Head>
-                    <ThemeProvider theme={theme}>
-                        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-                        <CssBaseline />
-                        <Layout>
-                            <Component {...pageProps} />
-                        </Layout>
-                    </ThemeProvider>
-                </CacheProvider>
-            </ApolloProvider>
-        </ReduxProvider>
+        <ApolloProvider client={apolloClient}>
+            <CacheProvider value={emotionCache}>
+                <Head>
+                    <meta
+                        name="viewport"
+                        content="initial-scale=1, width=device-width"
+                        title="Pokemon search"
+                    />
+                    <title>Pokemon Search</title>
+                </Head>
+                <ThemeProvider theme={theme}>
+                    {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+                    <CssBaseline />
+                    <Layout>
+                        <Component {...pageProps} />
+                    </Layout>
+                </ThemeProvider>
+            </CacheProvider>
+        </ApolloProvider>
     );
 }
 

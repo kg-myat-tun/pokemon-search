@@ -2,10 +2,9 @@ import React from 'react';
 //mui
 import Card from '@mui/material/Card';
 import Box from '@mui/material/Box';
-import { Divider, Typography, Grid } from '@mui/material';
+import { Typography, Grid } from '@mui/material';
 
 //constants
-import PokemonTypeColors from '../../../../constants/pokemonTypesColor';
 
 //utils
 import getTypeColor from '../../../../utils/getTypeColor';
@@ -86,7 +85,7 @@ const PokemonCard = ({ pokemon }: Props) => {
                                 sx={{
                                     width: '100%',
                                     height: 15,
-                                    backgroundColor: getTypeColor(type),
+                                    backgroundColor: getTypeColor(type).bgColor,
                                     borderRadius: 10,
                                     display: 'flex',
                                     justifyContent: 'center',
@@ -97,6 +96,7 @@ const PokemonCard = ({ pokemon }: Props) => {
                                     sx={{
                                         fontSize: 12,
                                         lineHeight: 1,
+                                        color: getTypeColor(type).color,
                                     }}
                                 >
                                     {type}
